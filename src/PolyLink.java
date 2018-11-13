@@ -1,7 +1,7 @@
 import java.util.LinkedList;
 
 public class PolyLink {
-    private Node first = new Node(0, 0);  // sentinel
+    private Node first = new Node(0, 0);  
     private Node last  = first;
 
     private static class Node {
@@ -13,11 +13,11 @@ public class PolyLink {
             this.exp  = exp;
         }
     }
-
+    //Node define
     // 0    
     private PolyLink() { }
 
-    // a * x^b
+    // a * x ^ b
     public PolyLink(int coef, int exp) {
         last.next = new Node(coef, exp);
         last = last.next;
@@ -68,7 +68,7 @@ public class PolyLink {
     }
 
 
-    // convert to string representation
+    //  convert to string representation
     public String toString() {
         String s = "";
         for (Node x = first.next; x != null; x = x.next) {
@@ -86,18 +86,18 @@ public class PolyLink {
         PolyLink p2   = new PolyLink(3, 2);
         PolyLink p3   = new PolyLink(1, 0);
         PolyLink p4   = new PolyLink(2, 1);
-        PolyLink p    = p1.plus(p2).plus(p3).plus(p4);   // 4x^3 + 3x^2 + 1
+        PolyLink p    = p1.plus(p2).plus(p3).plus(p4);    // 4x^3 + 3x^2 + 1
 
         PolyLink q1   = new PolyLink(3, 2);
         PolyLink q2   = new PolyLink(5, 0);
-        PolyLink q    = q1.plus(q2);                     // 3x^2 + 5
+        PolyLink q    = q1.plus(q2);                      // 3x^2 + 5
 
         PolyLink r    = p.plus(q);
-//      PolyLink s    = p.times(q);
+//       PolyLink s    = p.times(q);
         System.out.println("zero(x) =     " + zero);
         System.out.println("p(x) =        " + p);
         System.out.println("q(x) =        " + q);
-        System.out.println("p(x) + q(x) = " + r);
+        System.out.println("p(x) + q(x) = " + r); //Printing sum
 //        System.out.println("p(x) * q(x) = " + s);
 //        System.out.println("0 - p(x)    = " + zero.minus(p));
 //        System.out.println("p(3)        = " + p.evaluate(3));
